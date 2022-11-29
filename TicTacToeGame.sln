@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeGame.MVC", "TicTacToeGame.MVC\TicTacToeGame.MVC.csproj", "{DBD9DF70-0072-412F-AD8D-CAABD7430C30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{446EE6BE-DDD5-4FD0-BAE3-1E404B9810CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{225A778F-B63E-410A-9992-6EFBEA1C3B8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{912A33B6-A4F2-4C98-895D-46FE6DDD743D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeGame.Application", "TicTacToeGame.Application\TicTacToeGame.Application.csproj", "{F007BE95-E3C3-4E5D-8D40-EC763435D58D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeGame.Domain", "TicTacToeGame.Domain\TicTacToeGame.Domain.csproj", "{80C9EDB6-4253-468B-B931-8DADF2B03FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeGame.Persistence", "TicTacToeGame.Persistence\TicTacToeGame.Persistence.csproj", "{2CBD9E52-64E5-4D16-BCF9-4FA719F3BDEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBD9DF70-0072-412F-AD8D-CAABD7430C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD9DF70-0072-412F-AD8D-CAABD7430C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD9DF70-0072-412F-AD8D-CAABD7430C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD9DF70-0072-412F-AD8D-CAABD7430C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F007BE95-E3C3-4E5D-8D40-EC763435D58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F007BE95-E3C3-4E5D-8D40-EC763435D58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F007BE95-E3C3-4E5D-8D40-EC763435D58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F007BE95-E3C3-4E5D-8D40-EC763435D58D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C9EDB6-4253-468B-B931-8DADF2B03FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C9EDB6-4253-468B-B931-8DADF2B03FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C9EDB6-4253-468B-B931-8DADF2B03FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C9EDB6-4253-468B-B931-8DADF2B03FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CBD9E52-64E5-4D16-BCF9-4FA719F3BDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CBD9E52-64E5-4D16-BCF9-4FA719F3BDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CBD9E52-64E5-4D16-BCF9-4FA719F3BDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CBD9E52-64E5-4D16-BCF9-4FA719F3BDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBD9DF70-0072-412F-AD8D-CAABD7430C30} = {912A33B6-A4F2-4C98-895D-46FE6DDD743D}
+		{F007BE95-E3C3-4E5D-8D40-EC763435D58D} = {446EE6BE-DDD5-4FD0-BAE3-1E404B9810CF}
+		{80C9EDB6-4253-468B-B931-8DADF2B03FED} = {446EE6BE-DDD5-4FD0-BAE3-1E404B9810CF}
+		{2CBD9E52-64E5-4D16-BCF9-4FA719F3BDEB} = {225A778F-B63E-410A-9992-6EFBEA1C3B8B}
+	EndGlobalSection
+EndGlobal
