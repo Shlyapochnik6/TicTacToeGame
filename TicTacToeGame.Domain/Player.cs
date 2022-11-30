@@ -8,5 +8,5 @@ public class Player
     
     public string GameChip { get; set; } = "";
 
-    public List<TicTacToe> Games { get; set; }
+    public List<TicTacToe> TicTacToes { get; set; }
 }
