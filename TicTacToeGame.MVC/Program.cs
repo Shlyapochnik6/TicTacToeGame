@@ -1,4 +1,5 @@
 using System.Reflection;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using TicTacToeGame.Application;
 using TicTacToeGame.Application.Common.Mappings;
 using TicTacToeGame.Application.Interfaces;
@@ -12,6 +13,9 @@ builder.Services.AddControllersWithViews()
 
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options => { options.LoginPath = "/Login/Index"; });
 
 builder.Services.AddAutoMapper(config =>
 {
@@ -34,10 +38,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();
