@@ -17,4 +17,8 @@
       <ProjectReference Include="..\TicTacToeGame.Domain\TicTacToeGame.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="CommandsQueries\TicTacToe\Queries" />
+    </ItemGroup>
+
 </Project>

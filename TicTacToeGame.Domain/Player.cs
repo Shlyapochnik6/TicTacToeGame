@@ -6,7 +6,7 @@ public class Player
     
     public string Name { get; set; }
     
-    public string GameChip { get; set; } = "";
+    public string StepTypes { get; set; } = "";
 
     public List<TicTacToe> TicTacToes { get; set; }
 }
