@@ -7,7 +7,8 @@ using TicTacToeGame.Persistence;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
 
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
