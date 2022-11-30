@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TicTacToeGame.Application.Common.TicTacToeOptions;
 using TicTacToeGame.Application.Interfaces;
 
-namespace TicTacToeGame.Application.CommandsQueries.TicTacToe.Commands;
+namespace TicTacToeGame.Application.CommandsQueries.TicTacToe.Commands.Creation;
 
 public class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, Guid>
 {
