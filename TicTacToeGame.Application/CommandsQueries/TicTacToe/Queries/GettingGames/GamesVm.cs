@@ -2,5 +2,5 @@
 
 public class GamesVm
 {
-    public IEnumerable<GameDto> Games { get; set; }
+    public List<GameDto>? Games { get; set; }
 }

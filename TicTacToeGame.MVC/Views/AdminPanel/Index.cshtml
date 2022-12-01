@@ -1,8 +1,12 @@
-﻿@model TModel
+﻿@model ActiveGamesViewModel
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
-
-<h2>title</h2>
+<div class="all-games">Active games</div>
+<div class="games-container">
+    @foreach (var game in Model.Games)
+    {
+        <div class="row active-game">
+            <div class="row act-game-header">Author: @game.Name</div>
+            <div class="row act-game-id">Connection ID: @game.ConnectionId</div>
+        </div>
+    }
+</div>

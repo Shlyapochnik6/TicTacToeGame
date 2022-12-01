@@ -5,9 +5,9 @@ namespace TicTacToeGame.Application.CommandsQueries.TicTacToe.Queries.GettingGam
 
 public class GameDto : IMapWith<Domain.TicTacToe>
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     
-    public Guid ConnectionId { get; set; }
+    public Guid? ConnectionId { get; set; }
 
     public void Mapping(Profile profile)
     {
