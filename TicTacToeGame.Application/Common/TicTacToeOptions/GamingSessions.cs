@@ -4,4 +4,5 @@ public static class GamingSessions
 {
     public const string Open = "Open";
     public const string Finished = "Finished";
+    public const string Waiting = "Waiting";
 }
