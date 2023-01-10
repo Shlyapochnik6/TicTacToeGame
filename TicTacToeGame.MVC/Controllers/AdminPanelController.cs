@@ -23,11 +23,11 @@ public class AdminPanelController : Controller
     {
         var query = new GetGamesQuery();
         var result = await _mediator.Send(query);
-        var games = new ActiveGamesViewModel()
+        var gamesDtos = new ActiveGamesViewModel()
         {
             Games = result.Games
         };
-        return View(games);
+        return View(gamesDtos);
     }
     
     [HttpPost]
@@ -38,23 +38,24 @@ public class AdminPanelController : Controller
             AuthorName = User.Identity!.Name!
         };
         var connectionId = await _mediator.Send(command);
-        return RedirectToAction("Index");
+        return RedirectToAction("Index", "TicTacToe",
+            new { connectionId });
     }
     
-    // [HttpPost]
-    // public async Task<IActionResult> JoinGame(JoinViewModel model)
-    // {
-    //     var command = new JoinGameCommand()
-    //     {
-    //         ConnectionId = model.ConnectionId,
-    //         Name = User.Identity!.Name!,
-    //         ModelState = ModelState
-    //     };
-    //     var joining = await _mediator.Send(command);
-    //     if (!joining.ModelState.IsValid)
-    //     {
-    //         return View("Index", model);
-    //     }
-    //     return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public async Task<IActionResult> JoinGame(ActiveGamesViewModel model)
+    {
+        var command = new JoinGameCommand()
+        {
+            ConnectionId = model.ConnectionId,
+            Name = User.Identity!.Name!,
+            IsValid = true,
+            ModelState = ModelState
+        };
+        var joining = await _mediator.Send(command);
+        if (!joining.ModelState.IsValid)
+            return View("Index");
+        return RedirectToAction("Index", "TicTacToe",
+            new { connectionId = joining.TicTacToe.ConnectionId });
+    }
 }

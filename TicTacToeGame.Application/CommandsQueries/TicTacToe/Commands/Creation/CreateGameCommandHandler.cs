@@ -19,18 +19,22 @@ public class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, Guid>
         var author = await _dbContext.Players
             .FirstOrDefaultAsync(p => p.Name == request.AuthorName, cancellationToken);
         if (author == null)
-        {
             throw new NullReferenceException($"{request.AuthorName} does not exist");
-        }
+        var game = CreateGame(author.Name, author);
+        await _dbContext.TicTacToes.AddAsync(game, cancellationToken);
+        await _dbContext.SaveChangesAsync(cancellationToken);
+        return game.ConnectionId;
+    }
+
+    private Domain.TicTacToe CreateGame(string authorName, Domain.Player player)
+    {
         var game = new Domain.TicTacToe()
         {
             GameStatus = GamingSessions.Open,
             ConnectionId = Guid.NewGuid(),
             Board = BoardData.StartBoardData,
-            PlayerMoveName = author.Name
+            PlayerMoveName = authorName
         };
-        await _dbContext.TicTacToes.AddAsync(game, cancellationToken);
-        await _dbContext.SaveChangesAsync(cancellationToken);
-        return game.ConnectionId;
+        return game;
     }
 }

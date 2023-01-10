@@ -22,7 +22,7 @@ public class GetGamesQueryHandler : IRequestHandler<GetGamesQuery, GamesVm>
     {
         var games = await _dbContext.TicTacToes
             .Include(p => p.Players)
-            .Where(p => p.GameStatus == GamingSessions.Waiting)
+            .Where(p => p.GameStatus == GamingSessions.Open)
             .ProjectTo<GameDto>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken);
         return new GamesVm { Games = games };
     }

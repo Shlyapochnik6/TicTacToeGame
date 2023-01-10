@@ -1,13 +1,13 @@
 using System.Reflection;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using TicTacToeGame.Application;
+using TicTacToeGame.Application.Common.Hubs;
 using TicTacToeGame.Application.Common.Mappings;
 using TicTacToeGame.Application.Interfaces;
 using TicTacToeGame.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews()
     .AddRazorRuntimeCompilation();
 
@@ -43,7 +43,7 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapHub<Gamehub>("/game");
+    endpoints.MapHub<GameHub>("/game-hub");
 });
 
 app.MapControllerRoute(
