@@ -11,7 +11,10 @@ public static class DependencyInjection
     public static IServiceCollection AddPersistence(this IServiceCollection services, 
         IConfiguration configuration)
     {
-        var connectionString = configuration["DbConnection"];
+        var connectionString = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")
+                               == "Production" 
+            ? configuration["ProductionDbConnection"]
+            : configuration["DbConnection"];
         services.AddDbContext<TicTacToeDbContext>(options =>
         {
             options.UseNpgsql(connectionString);
