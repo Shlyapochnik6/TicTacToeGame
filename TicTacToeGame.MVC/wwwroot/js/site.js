@@ -1,4 +1,27 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿let createBtn = document.getElementById('create-btn');
+let joinInput = document.getElementById('join-input');
+let joinBtn = document.getElementById('joinBtn');
+let connectionId = joinBtn.value;
 
-// Write your JavaScript code.
+createBtn.addEventListener('click', async function () {
+    await fetch('AdminPanel/CreateGame/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify()
+    })
+})
+
+joinBtn.addEventListener('click', async function () {
+    await fetch('AdminPanel/JoinGame/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(connectionId)
+    })
+})
+
+
+

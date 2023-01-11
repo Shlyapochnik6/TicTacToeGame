@@ -5,7 +5,11 @@ namespace TicTacToeGame.Application.CommandsQueries.TicTacToe.Commands.Joining;
 
 public class JoinGameCommand : IRequest<JoiningVm>
 {
-    public string? ConnectionId { get; set; }
+    public Guid? ConnectionId { get; set; }
+    
     public string Name { get; set; }
+
+    public bool IsValid { get; set; }
+    
     public ModelStateDictionary ModelState { get; set; } = new();
 }
